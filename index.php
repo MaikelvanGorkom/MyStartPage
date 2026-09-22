@@ -160,9 +160,6 @@ try {
     const body = document.body;
     const IsAdminLoggedIn = <?php echo json_encode($IsAdminLoggedIn); ?>;
 
-    if (IsAdminLoggedIn) {
-        sessionStorage.removeItem('disableLogoutTimeout');
-    }
     if (body.classList.contains('admin-logged-in')) {
         let contextMenu = null;
 

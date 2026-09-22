@@ -648,10 +648,5 @@ if ($ActiveTable === 'links') {
     UpdateLinkHeaders();
 </script>
 <?php endif; ?>
-<script>
-if (<?php echo json_encode($IsAdminLoggedIn); ?>) {
-    sessionStorage.removeItem('disableLogoutTimeout');
-}
-</script>
 </body>
 </html>

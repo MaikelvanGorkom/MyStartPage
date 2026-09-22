@@ -1,5 +1,9 @@
 # Update Log
 
+## 2026-09-22
+- Fixed the "Disable auto-logout" checkbox resetting on every page load; it now retains its checked state across refreshes for the current browser session.
+- Author: GitHub Copilot
+
 ## 2026-09-19
 - Added the public `/index.php` start page, which reads visible tabs, headers, and links from the database and presents them in a tab-style layout.
 - Updated the start page to use four columns and position headers by their database `column` and `row` values; headers sharing a position are sorted by `headername`.
