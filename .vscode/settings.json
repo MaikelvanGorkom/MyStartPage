@@ -5,8 +5,4 @@
             "matchCommandLine": true
         }
     }
-
-    ,"remote.extensionKind": {
-        "Continue.continue": ["workspace", "ui"]
-    }
 }
