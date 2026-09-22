@@ -1,2 +1,4 @@
 config/config.php
 config/auth.php
+.github/copilot-instructions.md
+.vscode/settings.json
