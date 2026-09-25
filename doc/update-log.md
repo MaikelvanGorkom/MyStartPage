@@ -1,5 +1,9 @@
 # Update Log
 
+## 2026-09-25
+- Fixed being logged out after 15 minutes even with "Disable auto-logout" checked; the checkbox previously only stopped the client-side redirect but did not prevent the PHP session from expiring server-side while the tab sat idle. Added a `/keepalive.php` endpoint that the page now pings every 5 minutes while auto-logout is disabled to keep the session alive.
+- Author: GitHub Copilot
+
 ## 2026-09-22
 - Fixed the "Disable auto-logout" checkbox resetting on every page load; it now retains its checked state across refreshes for the current browser session.
 - Author: GitHub Copilot

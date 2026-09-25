@@ -253,11 +253,31 @@ try {
 
     if (DisableLogoutCheckbox && LogoutTimerDisplay) {
         const LogoutTimeout = 15 * 60 * 1000;
+        const KeepAliveInterval = 5 * 60 * 1000;
         let LogoutTimer = null;
         let TimeoutEnd = null;
+        let KeepAliveTimer = null;
         let IsTimeoutDisabled = sessionStorage.getItem('disableLogoutTimeout') === 'true';
 
         DisableLogoutCheckbox.checked = IsTimeoutDisabled;
+
+        function StartKeepAlive() {
+            if (KeepAliveTimer) return;
+            KeepAliveTimer = setInterval(() => {
+                fetch('keepalive.php', { credentials: 'same-origin' }).catch(() => {});
+            }, KeepAliveInterval);
+        }
+
+        function StopKeepAlive() {
+            if (KeepAliveTimer) {
+                clearInterval(KeepAliveTimer);
+                KeepAliveTimer = null;
+            }
+        }
+
+        if (IsTimeoutDisabled) {
+            StartKeepAlive();
+        }
 
         function UpdateTimerDisplay() {
             if (IsTimeoutDisabled || !TimeoutEnd) {
@@ -299,8 +319,10 @@ try {
 
             if (IsTimeoutDisabled) {
                 StopLogoutTimer();
+                StartKeepAlive();
             } else {
                 StartLogoutTimer();
+                StopKeepAlive();
             }
         });
 

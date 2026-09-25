@@ -23,7 +23,7 @@ How to add links.
 - You can edit everything from the dashboard
 
 What features have i implemented?
-- When yuo login a timer log you out after 15 minutes, just to be save. When you check the "Disable auto-logout" it will disable it and you have to log out yourself.
+- When you login a timer log you out after 15 minutes, just to be save. When you check the "Disable auto-logout" it will disable it and you have to log out yourself.
 - Focus mode: When you click on a tab with the right mouse button, you can focus on that tab. All other tabs will be hidden until you click on the tab again and select unfocus. Handy for when you have a lot of tabs, but you only want one tab open for work for example.
 - Edit and delete link: When right click on a link, you get the option to edit the link (maybe change the page name) or delete the link. When you delete a link, you are asked to enter a randomly generated number, just to confirm that you aren't trying to delete the link by mistake.
 
@@ -31,4 +31,3 @@ What features would be nice to have:
 - A more dynamic way to move the headers in the columns and rows.
 - Plugin for chrome/firefox/edge (It's really low on my list)
 - Maybe multi user (also very low on the list)
-- 
